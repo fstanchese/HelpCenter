@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Chamados</string>
+    <string name="title_activity_menu">Chamados</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Configuração</string>
+
+    <string-array name="Status">
+        <item>ABERTO</item>
+        <item>FECHADO</item>
+        <item>EMATENDIMENTO</item>
+        <item>PENDENTE</item>
+        <item>CANCELADO</item>
+        <item>ATRASADO</item>
+        <item>TODOS</item>
+    </string-array>
+</resources>

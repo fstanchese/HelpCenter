@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Nome: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usuario_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Celular: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usuario_celular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Tipo: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usuario_tipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="E-mail: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usuario_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+</LinearLayout>

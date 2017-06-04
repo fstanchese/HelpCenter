@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/layout_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Solicitante: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_solicitante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Assunto: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_assunto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Fila: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_fila"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Situação: "
+            android:textAlignment="viewEnd"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#030303"
+            android:textSize="40px"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Inicio prazo: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_cadastro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000cff"
+            android:textSize="40px"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:text="Limite: "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_limite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#000cff"
+            android:textSize="40px"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    android:padding="2dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:text="Tempo Restante: "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="40px"
+        android:textColor="#030303"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/chamado_prazo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000cff"
+        android:textSize="40px"/>
+
+    </LinearLayout>
+
+</LinearLayout>
