@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -51,8 +52,6 @@ public class NovoChamadoActivity extends AppCompatActivity  {
 
         Bundle args = getIntent().getBundleExtra("args");
         usuario = (Usuario) args.getSerializable("usuario");
-
-        Log.e(TAG, "Response from url:" + usuario +":");
 
         filasSpinner = (Spinner) findViewById(R.id.fila_spinner);
         SLASpinner = (Spinner) findViewById(R.id.sla_spinner);
@@ -243,19 +242,17 @@ public class NovoChamadoActivity extends AppCompatActivity  {
         Gson gson = new Gson();
         String jsonChamado = gson.toJson(chamado);
 
-        Log.e(TAG, "Requester from url:  chamado" + jsonChamado);
-
         Boolean lDesc = Validator.validateNotNull(editDescricao, "Descrição não pode ser vazio");
         Boolean lAssunto = Validator.validateNotNull(editAssunto, "Assunto não pode ser vazio");
 
         if (lDesc && lAssunto) {
             ChamadoRequester chamadoRequester = new ChamadoRequester(this);
             chamadoRequester.execute("http://107.170.41.209:8080/chamado/rest/v1/chamado/", jsonChamado);
+            finish();
         }
     }
 
     public class ChamadoRequester extends AsyncTask<String, String, String> {
-        private ProgressDialog progress;
         private Context context;
 
         public ChamadoRequester(Context context){
@@ -263,18 +260,10 @@ public class NovoChamadoActivity extends AppCompatActivity  {
         }
 
         @Override
-        protected void onPreExecute() {
-            progress = new ProgressDialog(context);
-            progress.setMessage("Carregando...");
-            progress.show();
-        }
-
-        @Override
         protected String doInBackground(String... params) {
             String jsonChamado = null;
 
             try{
-                progress.setMessage("Carregando...");
                 OkHttpClient client = new OkHttpClient();
                 MediaType mediaType = MediaType.parse("application/json");
                 RequestBody body = RequestBody.create(mediaType, params[1]);
@@ -291,8 +280,11 @@ public class NovoChamadoActivity extends AppCompatActivity  {
 
         @Override
         protected void onPostExecute(String params) {
-            progress.dismiss();
+            depoisIncluirChamado(params);
         }
+    }
+    public void depoisIncluirChamado(String jsonChamado) {
+        Toast.makeText(this, "Chamado criado com sucesso", Toast.LENGTH_SHORT).show();
     }
 
 }
