@@ -17,6 +17,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:lines="1"
+            android:text="# "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="40px"
+            android:textColor="#030303"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chamado_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:textColor="#000cff"
+            android:textSize="40px"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
             android:text="Solicitante: "
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="40px"
@@ -334,8 +361,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal"
         android:layout_marginBottom="5pt"
+        android:orientation="horizontal"
         android:padding="2dp">
 
         <ScrollView
@@ -350,8 +377,23 @@
                 android:lines="1"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#000cff"
-                android:textSize="40px"/>
+                android:textSize="40px" />
 
         </ScrollView>
     </LinearLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <Button
+            android:id="@+id/atenderChamado"
+            android:background="#6495ED"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Atender"
+            android:onClick="atenderChamado"/>
+
+    </RelativeLayout>
 </LinearLayout>
+

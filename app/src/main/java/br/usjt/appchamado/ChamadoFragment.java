@@ -164,7 +164,7 @@ public class ChamadoFragment extends Fragment {
                 Date dtFimAtendimento = null;
 
                 if (!"null".equals(item.getString("dtFimAtendimento"))) {
-                    Long lFimAtendimento = item.getLong("dtInicioAtendimento");
+                    Long lFimAtendimento = item.getLong("dtFimAtendimento");
                     dtFimAtendimento = new Date(lFimAtendimento);
                 }
 
@@ -175,7 +175,7 @@ public class ChamadoFragment extends Fragment {
 
                 if ("null".equals(prazo))
                 {
-                    prazo = "FINALIZADO";
+                    prazo = "";
                 }
                 if ("null".equals(descricao))
                 {
@@ -211,6 +211,7 @@ public class ChamadoFragment extends Fragment {
                     Log.e(TAG, "response listview " + lista.get(posicao));
                     Bundle args = new Bundle();
                     args.putSerializable("chamado", lista.get(posicao));
+                    args.putSerializable("usuario", usuario);
                     args.putString("prazo", lista.get(posicao).getPrazo());
                     intent.putExtra("args", args);
 

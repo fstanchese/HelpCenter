@@ -49,6 +49,11 @@ public class Chamado implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public Chamado(Long id, String solucao, String finaliza) {
+		this.id = id;
+		this.solucao = solucao;
+		this.finaliza = finaliza;
+	}
 
 	public void setPrazo(String prazo) {
 		this.prazo = prazo;

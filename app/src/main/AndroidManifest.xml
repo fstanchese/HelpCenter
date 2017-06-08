@@ -25,7 +25,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NovoChamadoActivity" />
-        <activity android:name=".DetalheChamadoActivity"></activity>
+        <activity android:name=".DetalheChamadoActivity" />
+        <activity android:name=".AtendeChamadoActivity"></activity>
     </application>
 
 </manifest>

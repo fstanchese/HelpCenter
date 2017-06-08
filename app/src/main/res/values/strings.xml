@@ -16,4 +16,9 @@
         <item>ATRASADO</item>
         <item>TODOS</item>
     </string-array>
+
+    <string-array name="Finaliza">
+        <item>Não</item>
+        <item>Sim</item>
+    </string-array>
 </resources>

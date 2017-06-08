@@ -35,6 +35,7 @@ public class ChamadoListaAdapter extends ArrayAdapter<Chamado> {
 
         Chamado chamadoPosicao = lista.get(position);
 
+        TextView chamado_id = (TextView) convertView.findViewById(R.id.chamado_id);
         TextView chamado_solicitante = (TextView) convertView.findViewById(R.id.chamado_solicitante);
         TextView chamado_assunto = (TextView) convertView.findViewById(R.id.chamado_assunto);
         TextView chamado_fila = (TextView) convertView.findViewById(R.id.chamado_fila);
@@ -46,6 +47,9 @@ public class ChamadoListaAdapter extends ArrayAdapter<Chamado> {
         String dtCadastro = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(chamadoPosicao.getDtCadastro());
         String dtLimite = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(chamadoPosicao.getDtLimite());
 
+        String id = chamadoPosicao.getId()+" ";
+
+        chamado_id.setText(id);
         chamado_solicitante.setText(chamadoPosicao.getSolicitante().getNome());
         chamado_assunto.setText(chamadoPosicao.getAssunto());
         chamado_fila.setText(chamadoPosicao.getFila().getDescricao());

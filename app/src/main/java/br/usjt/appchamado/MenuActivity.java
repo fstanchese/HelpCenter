@@ -17,15 +17,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     Bundle args;
+    Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         args = getIntent().getBundleExtra("args");
+        usuario = (Usuario) args.getSerializable("usuario");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -99,24 +102,35 @@ public class MenuActivity extends AppCompatActivity implements NavigationView.On
             ChamadoFragment chamadoFragment = new ChamadoFragment();
             chamadoFragment.setArguments(args);
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame,chamadoFragment,"Chamados");
+            fragmentTransaction.replace(R.id.frame, chamadoFragment, "Chamados");
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_usuario) {
-            setTitle("Usuarios");
-            UsuarioFragment usuarioFragment = new UsuarioFragment();
-            usuarioFragment.setArguments(args);
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame,usuarioFragment,"Usuarios");
-            fragmentTransaction.commit();
-        } else if (id == R.id.nav_fila) {
-            setTitle("Filas");
-            FilaFragment filaFragment = new FilaFragment();
-            filaFragment.setArguments(args);
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame,filaFragment,"Filas");
-            fragmentTransaction.commit();
+        }
+        if (id == R.id.nav_usuario) {
+            if (usuario.getTipoUsuario() == TipoUsuario.ADMINISTRADOR) {
+                setTitle("Usuarios");
+                UsuarioFragment usuarioFragment = new UsuarioFragment();
+                usuarioFragment.setArguments(args);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame, usuarioFragment, "Usuarios");
+                fragmentTransaction.commit();
+            } else {
+                Toast.makeText(this, "Você não tem permissão", Toast.LENGTH_SHORT).show();
+            }
+        }
+        if (id == R.id.nav_fila) {
+            if (usuario.getTipoUsuario() == TipoUsuario.ADMINISTRADOR) {
+                setTitle("Filas");
+                FilaFragment filaFragment = new FilaFragment();
+                filaFragment.setArguments(args);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.frame, filaFragment, "Filas");
+                fragmentTransaction.commit();
+            } else {
+                Toast.makeText(this, "Você não tem permissão", Toast.LENGTH_SHORT).show();
+            }
+        }
 
-        } else if (id == R.id.nav_sair) {
+        if (id == R.id.nav_sair) {
             confirmDialog();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
