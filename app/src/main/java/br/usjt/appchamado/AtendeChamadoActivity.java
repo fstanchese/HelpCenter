@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -138,4 +139,13 @@ public class AtendeChamadoActivity extends AppCompatActivity {
         Toast.makeText(this, "Chamado atendido com sucesso", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
